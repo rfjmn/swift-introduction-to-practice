@@ -5,7 +5,8 @@ import PackageDescription
 let package = Package(
     name: "Example",
     targets: [
-        .targert(name: "Library"),
-        .targert(name: "AnotherLibrary", dependencies: ["Library"]),
+        .target(name: "Library"),
+        .target(name: "AnotherLibrary", dependencies: ["Library"]),
+        .testTarget(name: "ModuleTests", dependencies: ["Library", "AnotherLibrary"]),
     ]
 )

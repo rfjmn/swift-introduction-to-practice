@@ -1,0 +1,22 @@
+[
+  {
+    "kind": "package",
+    "name": "chapter01/demo",
+    "path": "chapter01/demo"
+  },
+  {
+    "kind": "package",
+    "name": "chapter11/Example",
+    "path": "chapter11/Example"
+  },
+  {
+    "kind": "package",
+    "name": "chapter17/Demo",
+    "path": "chapter17/Demo"
+  },
+  {
+    "kind": "package",
+    "name": "chapter18/github_search_repository",
+    "path": "chapter18/github_search_repository"
+  }
+]

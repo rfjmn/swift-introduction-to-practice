@@ -191,3 +191,9 @@ Swiftのコメント
 // Quick Help
 - ドキュメントコメントはXcodeのQuick Helpに反映させる
 - Xcodeのメニューから、View -> Inspectors -> Show Quick Help Inspector（option + command + 3）を選択することで確認できる
+
+## 実行可能な補助サンプル
+
+`Sources/Library` と `Sources/AnotherLibrary` は、モジュールの依存関係と名前空間を確認するために追加した補助サンプルです。両方に `Greeting` を定義し、`AnotherLibrary` から `Library` の公開APIを呼び出します。
+
+このディレクトリで `swift test` を実行すると、`@testable` を使わずにモジュール外から利用できることを検証します。
