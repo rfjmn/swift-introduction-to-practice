@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by 藤門莉生 on 2023/02/02.
-//
-
 import Foundation
 
 /*
@@ -78,13 +71,13 @@ public extension GitHubRequest {
    
     /*
      URLSessionクラスを通じてサーバから受け取ったData型とHTTPURLResponse型の値をもとに
-     レスポンス型を表す連想型Responseを生成する
+     レスポンス型を表す関連型Responseを生成する
      
      JSONとして解釈可能なData型は、JSONDecoderクラスを使用してResponse型へと変換できる
      HTTPURLResponse型の値を確認することで、サーバから受け取った値をどのように解釈するべきかを決定できる
      
      HTTPURLResponse型の値から取得できるHTTPステータスコードに応じて処理を分岐する
-     1. HTTPステータスコードが200番台（成功）の場合は正常なレスポンスが返ってきているので、JSONDecoderクラスのdeocde(_:from:)メソッドを使用してResponse型の値をインスタンス化し、戻り値として返す
+     1. HTTPステータスコードが200番台（成功）の場合は正常なレスポンスが返ってきているので、JSONDecoderクラスのdecode(_:from:)メソッドを使用してResponse型の値をインスタンス化し、戻り値として返す
      
      2. HTTPステータスコードが200番台ではない場合はエラーレスポンスが返ってきていることが想定されるので、同じくJSONDecoderクラスのdecode(_:from:)メソッドを使用してGitHubAPIErrorを発生させる
      */

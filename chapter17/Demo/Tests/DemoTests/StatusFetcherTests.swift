@@ -1,10 +1,3 @@
-//
-//  StatusFetcherTests.swift
-//  
-//
-//  Created by 藤門莉生 on 2023/01/31.
-//
-
 /*
  HTTPクライアントが200を返したとき、StatusFetcher2クラスが200を結果として返す
  */

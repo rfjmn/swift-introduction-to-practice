@@ -123,8 +123,8 @@ if let user = User2(id: 0, name: "Yousuke Ishikawa", email: "ishikawa@example.co
  型引数のSuccessは成功時の値の型を表し、Failureは失敗時のエラーの型を表す
 
  public enum Result<Success, Failure> where Failure: Error {
-    case success(Success) // .successの場合は、Success型の連想値を持つ
-    case failure(Failure) // .failureの場合は、Failure型の連想値を持つ
+    case success(Success) // .successの場合は、Success型の関連値を持つ
+    case failure(Failure) // .failureの場合は、Failure型の関連値を持つ
  }
  */
 
@@ -177,7 +177,7 @@ case let .failure(error):
  Result<Success, Failure>型によるエラー処理を利用するべきとき
  
  エラーの詳細を提供する
- Optional<Wrapped>型とは違い、Result<Success, Failure>型では、連想値を通じて失敗時にエラーの値を返す
+ Optional<Wrapped>型とは違い、Result<Success, Failure>型では、関連値を通じて失敗時にエラーの値を返す
  従って、エラー発生時には必ずエラーの詳細を受け取ることができ、詳細に応じてエラー処理の挙動を細かくコントロールできる
  
  (ex)

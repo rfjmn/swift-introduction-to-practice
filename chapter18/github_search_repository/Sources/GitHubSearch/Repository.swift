@@ -1,14 +1,7 @@
-//
-//  Repository.swift
-//  
-//
-//  Created by 藤門莉生 on 2023/02/01.
-//
-
 /*
- JSONキーのうち、full_nameは、Repository型のプロパティ名fullNameと一致しない
- このようなケースでは、列挙型のCodingKeys型をネスト型として定義し、「ケース名」と「ローバリュー」によって
- プロパティ名とJSONキーの対応関係を記述する
+ この型は独自のCodingKeysを持たない。GitHubRequest.responseのJSONDecoderで
+ convertFromSnakeCaseを指定し、full_nameをfullNameへ対応させる。
+ 単独でデコードする呼び出し元も、同じkeyDecodingStrategyを設定する必要がある。
  */
 public struct Repository: Decodable {
     public var id: Int

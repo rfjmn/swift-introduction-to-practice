@@ -76,19 +76,16 @@ public struct SomeStruct4 {
  *コメント
  */
 
-///ドキュメントコメント
-///メソッドの説明
-///**太字**や[リンク](https://example.com/)が使用できる。
-///- parameter arg1: 第一引数の説明
-///- parameter arg2: 第二引数の説明
-///- returns: 戻り値の説明
-///- throws: エラーの説明
+/// ドキュメントコメントの記法を示す、処理を持たないサンプルメソッド。
+///
+/// **太字**や[リンク](https://example.com/)を記述できます。
+///
+/// - Parameters:
+///   - arg1: 1つ目の入力文字列。この例では使用しません。
+///   - arg2: 2つ目の入力文字列。この例では使用しません。
 func someMethod(arg1: String, arg2: String){}
 
-/**
- - ドキュメントコメントでは、Markdown記法が使用できる
- - スタイル指定やリンクの設定ができる
- - parameters 引数を指定
- - returns 戻り値を指定
- - throws エラーに対する説明
+/*
+ DocCの記法: Parametersは引数、Returnsは戻り値、Throwsは送出するエラーを説明する。
+ このsomeMethodはVoidを返す非throwing関数なので、ReturnsとThrowsは記載しない。
  */

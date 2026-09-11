@@ -1,10 +1,3 @@
-//
-//  GitHubClientError.swift
-//  
-//
-//  Created by 藤門莉生 on 2023/02/01.
-//
-
 /*
  APIクライアントで考えられるエラー
     - URLが不正
@@ -13,7 +6,7 @@
  */
 import Foundation
 
-// 各ケースにError型の連想値を付与
+// 各ケースにError型の関連値を付与
 public enum GitHubClientError: Error {
     // 通信に失敗
     // (ex)端末がオフライン, URLのホストが見つからない

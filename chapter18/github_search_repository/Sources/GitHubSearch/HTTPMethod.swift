@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by 藤門莉生 on 2023/02/02.
-//
-
 public enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"

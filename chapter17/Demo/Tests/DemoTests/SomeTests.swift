@@ -1,10 +1,3 @@
-//
-//  SomeTests.swift
-//  
-//
-//  Created by 藤門莉生 on 2023/01/30.
-//
-
 import XCTest
 
 class SomeTests: XCTestCase {
