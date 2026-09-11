@@ -4,6 +4,10 @@
 
 GitHubClient・StatusFetcherの継承範囲を限定し、レスポンス変数の誤字を修正しています。StatusFetcherは想定外の応答をクラッシュではなく失敗として返します。アクセス制御・継承・ARC・エラー処理そのものを説明する比較教材や、明示的に有効化するクラッシュ例は区別して維持します。
 
+第18章のHTTPClientは非HTTP応答や欠落した応答をURLError.badServerResponseとして通知し、個別にキャンセルできるハンドルをGitHubClientの呼び出し元まで返します。スタブはunowned参照と実時間の遅延を使いません。
+
+従来のリクエスト・レスポンス変換に加え、非HTTP応答、URLSessionのキャンセル、GitHubClientからのキャンセル伝達を検証します。
+
 ## 共通の設計基準
 
 - 型・メンバーは必要な範囲だけに公開します。内部状態は`private`、外部から読む状態は必要に応じて`private(set)`にします。プロトコルの要件、Storyboardの接続、サブクラスからの利用を確認して変更します。

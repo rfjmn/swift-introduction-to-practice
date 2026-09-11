@@ -37,6 +37,16 @@ swift Scripts/verify.swift --index 0
 
 第17章の意図的にクラッシュするテストは通常実行で1件スキップします。再現方法は [DemoのREADME](chapter17/Demo/README.md) を参照してください。
 
+## 振る舞いの回帰テスト
+
+第18章のHTTPClientは非HTTP応答や欠落した応答をURLError.badServerResponseとして通知し、個別にキャンセルできるハンドルをGitHubClientの呼び出し元まで返します。スタブはunowned参照と実時間の遅延を使いません。
+
+従来のリクエスト・レスポンス変換に加え、非HTTP応答、URLSessionのキャンセル、GitHubClientからのキャンセル伝達を検証します。
+
+```sh
+swift test --package-path chapter18/github_search_repository
+```
+
 ## Swiftコード品質
 
 [設計・命名・所有関係の方針と、この教材への適用範囲](SWIFT-QUALITY.md)を参照してください。

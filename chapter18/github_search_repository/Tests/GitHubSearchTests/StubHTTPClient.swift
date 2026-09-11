@@ -4,7 +4,7 @@ import GitHubSearch
 /*
  スタブ可能なHTTPクライアント
  */
-class StubHTTPClient: HTTPClient {
+final class StubHTTPClient: HTTPClient {
     var result: Result<(Data, HTTPURLResponse), Error> = .success((
         Data(),
         HTTPURLResponse(
@@ -15,9 +15,16 @@ class StubHTTPClient: HTTPClient {
         )!
     ))
     
-    func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.1) { [unowned self] in
-            completion(self.result)
-        }
+    let cancellation = CancellationSpy()
+
+    @discardableResult
+    func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) -> HTTPRequestCancelling {
+        completion(result)
+        return cancellation
     }
+}
+
+final class CancellationSpy: HTTPRequestCancelling {
+    private(set) var isCancelled = false
+    func cancel() { isCancelled = true }
 }

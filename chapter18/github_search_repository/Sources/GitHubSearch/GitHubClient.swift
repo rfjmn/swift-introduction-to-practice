@@ -16,13 +16,14 @@ public final class GitHubClient {
     /// - Parameters:
     ///   - request: URLの構築とレスポンスの変換方法を定義するリクエスト。
     ///   - completion: 通信と変換が終わった時点の結果を受け取るクロージャ。
+    @discardableResult
     public func send<Request: GitHubRequest>(
         request: Request,
         completion: @escaping(Result<Request.Response, GitHubClientError>) -> Void
-    ) {
+    ) -> HTTPRequestCancelling {
         let urlRequest = request.buildURLRequest()
 
-        httpClient.sendRequest(urlRequest) { result in
+        return httpClient.sendRequest(urlRequest) { result in
 
             switch result {
             case .success((let data, let urlResponse)):
